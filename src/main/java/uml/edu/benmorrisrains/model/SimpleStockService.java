@@ -2,6 +2,7 @@ package uml.edu.benmorrisrains.model;
 
 import yahoofinance.Stock;
 import yahoofinance.YahooFinance;
+import yahoofinance.histquotes.Interval;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -15,9 +16,10 @@ public class SimpleStockService implements StockService {
         try {
             Stock stock = YahooFinance.get(symbol);
             BigDecimal price = stock.getQuote().getPrice();
-            Calendar now = Calendar.getInstance();
-            Date date = now.getTime();
-            stockQuote = new StockQuote(price, date, symbol);
+            Calendar from = Calendar.getInstance();
+            Calendar to = Calendar.getInstance();
+            Interval interval = Interval.DAILY;
+            stockQuote = new StockQuote(symbol, from, to, interval );
         } catch (IOException e) {
             System.out.println("Error: " + e);
         }

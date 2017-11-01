@@ -4,6 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import yahoofinance.Stock;
+import yahoofinance.YahooFinance;
+
+import java.io.IOException;
 
 @Controller
 @RequestMapping("/stockQuote")
@@ -24,7 +28,10 @@ public class StockServiceController {
 
 
     @RequestMapping("/processForm")
-    public String processForm(@ModelAttribute("stock") StockQuote stockQuote) {
+    public String processForm(@ModelAttribute("stock") StockQuote stockQuote) throws IOException {
+
+        Stock stock = YahooFinance.get(stockQuote.getSymbol());
+
         System.out.println("stockQuote" + stockQuote.getSymbol()) ;
 
         return "stockquoteResults";
