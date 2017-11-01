@@ -9,6 +9,9 @@
 
 
 <p>Symbol: ${stock.symbol} </p>
+<p>Price: ${stock.price}</p>
+<P>Date: ${stock.date}</P>
+
 
 
 

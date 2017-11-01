@@ -14,10 +14,13 @@ import java.io.IOException;
 public class StockServiceController {
 
     @RequestMapping("/showForm")
-    public String showForm (Model theModel) {
+    public String showForm (Model theModel, String symbol) throws IOException {
 
         //creating a new stockQuote object
-        StockQuote stockQuote = new StockQuote();
+
+        StockService stockService = YahooStockServiceFactory.getYahooStockService();
+
+        StockQuote stockQuote = stockService.getQuote("GOOG");
 
         //adding stockQuote object as model attribute
 
@@ -28,12 +31,9 @@ public class StockServiceController {
 
 
     @RequestMapping("/processForm")
-    public String processForm(@ModelAttribute("stock") StockQuote stockQuote) throws IOException {
+    public String processForm(@ModelAttribute("stock") StockQuote stock){
 
-        Stock stock = YahooFinance.get(stockQuote.getSymbol());
-
-        System.out.println("stockQuote" + stockQuote.getSymbol()) ;
-
+        System.out.println(stock);
         return "stockquoteResults";
     }
 }

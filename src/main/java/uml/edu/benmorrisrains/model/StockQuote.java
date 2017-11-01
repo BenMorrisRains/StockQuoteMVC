@@ -1,9 +1,7 @@
 package uml.edu.benmorrisrains.model;
 
-import yahoofinance.histquotes.Interval;
 
-import java.util.Calendar;
-import java.util.Date;
+import yahoofinance.histquotes.Interval;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -13,11 +11,19 @@ import java.util.Date;
  */
 public class StockQuote extends StockData {
 
+    private BigDecimal price;
+    private Date date;
     private String symbol;
-    private Calendar from;
-    private Calendar to;
-    private Interval interval;
+    private String interval;
 
+
+    public String getInterval() {
+        return interval;
+    }
+
+    public void setInterval(String interval) {
+        this.interval = interval;
+    }
 
     /**
      * Create a new instance of a StockQuote.
@@ -26,47 +32,38 @@ public class StockQuote extends StockData {
      * @param date   the date of the share price
      * @param symbol the stock symbol.
      */
-
-    public StockQuote() {
-    }
-
-    public StockQuote(String symbol, Calendar from, Calendar to, Interval interval) {
+    public StockQuote(BigDecimal price, Date date, String symbol) {
         super();
+        this.price = price;
+        this.date = date;
         this.symbol = symbol;
-        this.from = from;
-        this.to = to;
-        this.interval = interval;
     }
 
+    public StockQuote(){}
+    /**
+     * @return Get the share price for the given date.
+     */
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    /**
+     * @return The date of the share price
+     */
+    public Date getDate() {
+        return date;
+    }
+
+    /**
+     * @return The stock symbol.
+     */
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
-    }
-
-    public Calendar getFrom() {
-        return from;
-    }
-
-    public void setFrom(Calendar from) {
-        this.from = from;
-    }
-
-    public Calendar getTo() {
-        return to;
-    }
-
-    public void setTo(Calendar to) {
-        this.to = to;
-    }
-
-    public Interval getInterval() {
-        return interval;
-    }
-
-    public void setInterval(Interval interval) {
-        this.interval = interval;
+    @Override
+    public String toString() {
+        String dateString = simpleDateFormat.format(date);
+        return "Symbol: " + symbol + " Price: $" + price + " Date: " + dateString;
     }
 }
