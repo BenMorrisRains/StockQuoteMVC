@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="stock-quote-mvc:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/stock_quote_mvc_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="stock-quote-mvc/javaeeApplication/javaEEApplication" />
+    </root>
+  </artifact>
+</component>

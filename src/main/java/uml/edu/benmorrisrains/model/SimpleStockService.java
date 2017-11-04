@@ -1,8 +1,8 @@
 package uml.edu.benmorrisrains.model;
 
+import uml.edu.benmorrisrains.entity.StockQuote;
 import yahoofinance.Stock;
 import yahoofinance.YahooFinance;
-import yahoofinance.histquotes.Interval;
 
 
 import java.io.IOException;
