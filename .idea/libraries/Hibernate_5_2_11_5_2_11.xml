@@ -12,6 +12,42 @@
       <root url="jar://$PROJECT_DIR$/lib/jboss-logging-3.3.0.Final.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/javassist-3.20.0-GA.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/hibernate-core-5.2.11.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/c3p0-0.9.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hibernate-c3p0-5.2.12.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hibernate-validator-6.0.4.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hibernate-validator-annotation-processor-6.0.4.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hibernate-validator-cdi-6.0.4.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.ejb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.jms.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.resource.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mchange-commons-java-0.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.44-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-aop-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-aspects-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-beans-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-context-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-context-support-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-core-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-expression-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-instrument-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-instrument-tomcat-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-jdbc-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-jms-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-messaging-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-orm-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-oxm-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-test-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-tx-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-web-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-webmvc-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-webmvc-portlet-4.3.12.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-websocket-4.3.12.RELEASE.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

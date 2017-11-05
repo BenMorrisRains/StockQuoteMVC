@@ -1,9 +1,14 @@
 package uml.edu.benmorrisrains.entity;
 
+import org.hibernate.search.annotations.Analyze;
+import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Store;
 import uml.edu.benmorrisrains.model.StockData;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -11,6 +16,7 @@ import java.util.Date;
  */
 
 @Entity
+@Indexed
 @Table(name = "stock_quotes")
 public class StockQuote extends StockData {
 
@@ -19,31 +25,26 @@ public class StockQuote extends StockData {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "price")
+    @Column(name = "price", nullable = false, length = 20)
+    @org.hibernate.search.annotations.Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
     private BigDecimal price;
 
-    @Column(name = "date")
+    @Column(name = "date", nullable = false, length = 20)
+    @org.hibernate.search.annotations.Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
     private Date date;
 
-    @Column(name = "symbol")
+    @Column(name = "symbol", nullable = false, length = 20)
+    @org.hibernate.search.annotations.Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
     private String symbol;
 
 
-    /**
-     * Create a new instance of a StockQuote.
-     *
-     * @param price  the share price for the given date
-     * @param date   the date of the share price
-     * @param symbol the stock symbol.
-     */
-    public StockQuote(BigDecimal price, Date date, String symbol) {
+    public StockQuote() {}
+
+    public StockQuote(String symbol, BigDecimal price, Date date) {
         super();
         this.price = price;
         this.date = date;
         this.symbol = symbol;
-    }
-
-    public StockQuote() {
     }
 
     public int getId() {
@@ -54,35 +55,27 @@ public class StockQuote extends StockData {
         this.id = id;
     }
 
-    /**
-     * @return Get the share price for the given date.
-     */
     public BigDecimal getPrice() {
         return price;
     }
 
-    /**
-     * @return The date of the share price
-     */
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
     public Date getDate() {
         return date;
     }
 
-    /**
-     * @return The stock symbol.
-     */
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     public String getSymbol() {
         return symbol;
     }
 
-    @Override
-    public String toString() {
-        return "StockQuote{" +
-                "id=" + id +
-                ", price=" + price +
-                ", date=" + date +
-                ", symbol='" + symbol + '\'' +
-                ", simpleDateFormat=" + simpleDateFormat +
-                '}';
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
     }
 }

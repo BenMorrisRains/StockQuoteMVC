@@ -6,8 +6,7 @@ import java.util.List;
 
 public interface StockQuoteDAO {
 
-    public List<StockQuote> getStockQuote();
+    List<StockQuote> getStockQuote();
 
-
-
+    StockQuote searchQuotes(String symbol);
 }

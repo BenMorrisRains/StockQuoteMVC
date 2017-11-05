@@ -46,6 +46,9 @@
       <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/mchange-commons-java-0.2.11.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/spring-mvc-test/web/WEB-INF/lib/jstl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hibernate-validator-6.0.4.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hibernate-validator-annotation-processor-6.0.4.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hibernate-validator-cdi-6.0.4.Final.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
