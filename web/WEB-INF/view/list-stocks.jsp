@@ -23,7 +23,7 @@
             <th>Date</th>
         </tr>
 
-        <c:forEach var="tempStockQuotes" items="${stockQuote1}">
+        <c:forEach var="tempStockQuotes" items="${stockQuote}">
 
         <tr>
             <td>${tempStockQuotes.symbol}</td>

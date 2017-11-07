@@ -4,6 +4,7 @@ import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Index;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.Store;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import uml.edu.benmorrisrains.model.StockData;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ import java.util.Date;
 
 @Entity
 @Indexed
+@EnableTransactionManagement
 @Table(name = "stock_quotes")
 public class StockQuote extends StockData {
 

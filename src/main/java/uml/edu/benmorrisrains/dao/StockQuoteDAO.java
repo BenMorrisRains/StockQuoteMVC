@@ -8,5 +8,5 @@ public interface StockQuoteDAO {
 
     List<StockQuote> getStockQuote();
 
-    StockQuote searchQuotes(String symbol);
+    List<StockQuote> searchQuotes(String symbol);
 }

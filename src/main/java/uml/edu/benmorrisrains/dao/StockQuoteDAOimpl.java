@@ -28,7 +28,7 @@ public class StockQuoteDAOimpl implements StockQuoteDAO {
 
         // create a query
 
-        Query<StockQuote> theQuery = currentSession.createQuery("from StockQuote", StockQuote.class);
+        Query<StockQuote> theQuery = currentSession.createQuery("from StockQuote order by symbol", StockQuote.class);
 
         // execute query and get result list
         List<StockQuote> stockQuotes = theQuery.getResultList();
@@ -39,8 +39,18 @@ public class StockQuoteDAOimpl implements StockQuoteDAO {
     }
 
     @Override
-    public StockQuote searchQuotes(String symbol) {
-        return sessionFactory.getCurrentSession().get(StockQuote.class, symbol);
+    public List<StockQuote> searchQuotes(String symbol) {
+
+     Session currentSession = sessionFactory.getCurrentSession();
+     sessionFactory.openSession();
+
+     Query<StockQuote> theQuery = currentSession.createQuery("from StockQuote where symbol = '" + symbol + "'",
+                StockQuote.class);
+
+        List<StockQuote> stockQuotes = theQuery.getResultList();
+
+
+        return stockQuotes;
     }
 
 

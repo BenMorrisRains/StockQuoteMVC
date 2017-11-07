@@ -9,5 +9,5 @@ public interface StockService {
 
     public List<StockQuote> getStockQuotes();
 
-    StockQuote searchQuotes(String symbol);
+    List<StockQuote> searchQuotes(String symbol);
 }

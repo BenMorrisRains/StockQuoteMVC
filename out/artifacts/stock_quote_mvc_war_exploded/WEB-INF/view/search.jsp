@@ -26,15 +26,15 @@
     <body>
     <h2>Search for Stock</h2>
 
-    <form:form action="doSearch" method="post" modelAttribute="stockQuote1">
+    <form:form action="doSearch" method="post" modelAttribute="stockQuote">
 
-        Symbol: <input type="text" name="searchText"/><br/>
+        Symbol: <input type="search" name="searchText"/><br/>
 
         <br><br>
 
         <input type="submit" name="action" value="search"/>
 
-        <input type="reset"/>
+
 
     </form:form>
 
@@ -45,7 +45,7 @@
         <th>Symbol</th>
         <th>Price</th>
         <th>Date</th>
-        <c:forEach items="${stockQuote1}" var="stock">
+        <c:forEach items="${stockQuote}" var="stock">
             <tr>
                 <td>${stock.symbol}</td>
                 <td>${stock.price}</td>
