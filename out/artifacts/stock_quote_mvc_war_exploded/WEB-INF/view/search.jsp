@@ -28,7 +28,7 @@
 
     <form:form action="doSearch" method="post" modelAttribute="stockQuote">
 
-        Symbol: <input type="search" name="searchText"/><br/>
+        Symbol: <input id="symbol" type="search" name="searchText"/><br/>
 
         <br><br>
 

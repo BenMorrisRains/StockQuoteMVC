@@ -3,10 +3,7 @@ package uml.edu.benmorrisrains.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import uml.edu.benmorrisrains.entity.StockQuote;
 import uml.edu.benmorrisrains.service.StockService;
 import java.io.IOException;
@@ -43,10 +40,10 @@ public class StockQuoteController {
     }
 
     @PostMapping("/doSearch")
-    public String doActions(@ModelAttribute StockQuote stockQuote, Model theModel, String symbol) throws IOException {
+    public String doActions(@ModelAttribute StockQuote stockQuote, Model theModel,
+                            @ModelAttribute("searchText") String symbol) throws IOException {
 
         List<StockQuote> theQuote = stockQuoteService.searchQuotes(symbol);
-
         theModel.addAttribute("stockQuote", theQuote);
 
         return "search";

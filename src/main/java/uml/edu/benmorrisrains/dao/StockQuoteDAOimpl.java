@@ -6,18 +6,15 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import uml.edu.benmorrisrains.entity.StockQuote;
+
 import java.util.List;
 
 @Repository
 public class StockQuoteDAOimpl implements StockQuoteDAO {
 
-
-
-
     //I need to inject the session factory
     @Autowired
     private SessionFactory sessionFactory;
-
 
 
     @Override
@@ -38,16 +35,20 @@ public class StockQuoteDAOimpl implements StockQuoteDAO {
         return stockQuotes;
     }
 
+
     @Override
     public List<StockQuote> searchQuotes(String symbol) {
 
-     Session currentSession = sessionFactory.getCurrentSession();
-     sessionFactory.openSession();
+
+        Session currentSession = sessionFactory.getCurrentSession();
+        sessionFactory.openSession();
 
      Query<StockQuote> theQuery = currentSession.createQuery("from StockQuote where symbol = '" + symbol + "'",
                 StockQuote.class);
 
         List<StockQuote> stockQuotes = theQuery.getResultList();
+
+        System.out.println(stockQuotes);
 
 
         return stockQuotes;
