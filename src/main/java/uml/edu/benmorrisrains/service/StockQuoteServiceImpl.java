@@ -8,6 +8,10 @@ import uml.edu.benmorrisrains.entity.StockQuote;
 import javax.transaction.Transactional;
 import java.util.List;
 
+/**
+ * Service class.
+ */
+
 @Service
 @EnableTransactionManagement
 public class StockQuoteServiceImpl implements StockService {

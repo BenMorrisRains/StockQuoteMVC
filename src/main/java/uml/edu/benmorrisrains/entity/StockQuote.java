@@ -13,7 +13,8 @@ package uml.edu.benmorrisrains.entity;
         import java.util.Date;
 
 /**
- * A container class that contains stock data.
+ * This is my entity class. This class and its annotations maps our objects to the database
+ * using hibernate.
  */
 
 @Entity

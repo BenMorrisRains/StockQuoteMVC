@@ -15,6 +15,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
+/**
+ * This is a simple test class to test the connection.
+ */
 public class test {
 
     public static void main(String[] args) throws IOException {

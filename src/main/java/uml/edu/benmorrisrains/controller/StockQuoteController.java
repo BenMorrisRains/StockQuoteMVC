@@ -10,10 +10,16 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This is my main controller that controls the entire application.
+ */
 @Controller
 @RequestMapping("/stockQuote")
 public class StockQuoteController {
 
+    /**
+     * listStocks method lists all the stocks in the database.
+     */
     // inject StockService
     @Autowired
     private StockService stockQuoteService;
@@ -30,14 +36,26 @@ public class StockQuoteController {
 
     }
 
+    /**
+     *
+     * simple index page that maps to the index.jsp which redirects to search.jsp
+     */
+
 
     @GetMapping("/index")
-    public String setupForm(Map<String, Object> map){
-        StockQuote stockQuote = new StockQuote();
-        map.put("student", stockQuote);
-        map.put("studentList", stockQuoteService.getStockQuotes());
+    public String index() {
         return "search";
     }
+
+    /**
+     * Form controller.
+     *
+     * @param stockQuote
+     * @param theModel
+     * @param symbol
+     * @return
+     * @throws IOException
+     */
 
     @PostMapping("/doSearch")
     public String doActions(@ModelAttribute StockQuote stockQuote, Model theModel,

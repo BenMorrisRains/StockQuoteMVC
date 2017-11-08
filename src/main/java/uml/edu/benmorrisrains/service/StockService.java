@@ -4,6 +4,9 @@ import uml.edu.benmorrisrains.entity.StockQuote;
 
 import java.util.List;
 
+/**
+ * StockService interface
+ */
 public interface StockService {
 
 

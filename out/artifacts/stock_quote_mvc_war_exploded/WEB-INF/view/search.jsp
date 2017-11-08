@@ -1,11 +1,11 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Stock Quote Query</title>
-
+    <!-- CSS -->
     <link type="text/css"
           rel="stylesheet"
           href="${pageContext.request.contextPath}/resources/css/style.css">
@@ -13,6 +13,8 @@
     <link type="text/css"
           rel="stylesheet"
           href="${pageContext.request.contextPath}/resources/css/add-customer-style.css">
+    <!-- End CSS -->
+
 </head>
 <body>
 
@@ -26,6 +28,9 @@
     <body>
     <h2>Search for Stock</h2>
 
+    <p>Currently, you are limited to Google("GOOG"), Amazon("AMZN"), or PayPal("PYPL"). You can only search by
+        symbol!</p>
+
     <form:form action="doSearch" method="post" modelAttribute="stockQuote">
 
         Symbol: <input id="symbol" type="search" name="searchText"/><br/>
@@ -33,7 +38,6 @@
         <br><br>
 
         <input type="submit" name="action" value="search"/>
-
 
 
     </form:form>
@@ -53,7 +57,6 @@
             </tr>
         </c:forEach>
     </table>
-
 
 
     </body>

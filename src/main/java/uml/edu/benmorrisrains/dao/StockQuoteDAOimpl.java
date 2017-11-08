@@ -9,13 +9,17 @@ import uml.edu.benmorrisrains.entity.StockQuote;
 
 import java.util.List;
 
+/**
+ * This is where I implement the StockQuoteDAO interface and
+ * where all the logic is located. This is where I start the Hibernate session.
+ */
+
 @Repository
 public class StockQuoteDAOimpl implements StockQuoteDAO {
 
     //I need to inject the session factory
     @Autowired
     private SessionFactory sessionFactory;
-
 
     @Override
     public List<StockQuote> getStockQuote() {
