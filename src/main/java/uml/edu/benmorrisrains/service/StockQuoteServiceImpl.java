@@ -6,6 +6,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import uml.edu.benmorrisrains.dao.StockQuoteDAO;
 import uml.edu.benmorrisrains.entity.StockQuote;
 import javax.transaction.Transactional;
+import java.sql.Date;
+import java.text.ParseException;
 import java.util.List;
 
 /**
@@ -27,8 +29,8 @@ public class StockQuoteServiceImpl implements StockService {
 
     @Override
     @Transactional
-    public List<StockQuote> searchQuotes(String symbol) {
-        return stockQuoteDAO.searchQuotes(symbol);
+    public List<StockQuote> searchQuotes(String symbol, String fromDate, String untilDate) throws ParseException {
+        return stockQuoteDAO.searchQuotes(symbol, fromDate, untilDate);
     }
 
 

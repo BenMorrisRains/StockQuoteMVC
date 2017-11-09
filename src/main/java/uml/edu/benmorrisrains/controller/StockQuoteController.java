@@ -1,5 +1,6 @@
 package uml.edu.benmorrisrains.controller;
 
+import org.hibernate.validator.constraints.pl.REGON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import uml.edu.benmorrisrains.entity.StockQuote;
 import uml.edu.benmorrisrains.service.StockService;
 import java.io.IOException;
+import java.sql.Date;
+import java.text.ParseException;
 import java.util.List;
 import java.util.Map;
 
@@ -59,9 +62,10 @@ public class StockQuoteController {
 
     @PostMapping("/doSearch")
     public String doActions(@ModelAttribute StockQuote stockQuote, Model theModel,
-                            @ModelAttribute("searchText") String symbol) throws IOException {
+                            @ModelAttribute("searchText") String symbol, @RequestParam("fromDate")String fromDate,
+                            @RequestParam("untilDate") String untilDate) throws IOException, ParseException {
 
-        List<StockQuote> theQuote = stockQuoteService.searchQuotes(symbol);
+        List<StockQuote> theQuote = stockQuoteService.searchQuotes(symbol, fromDate, untilDate);
         theModel.addAttribute("stockQuote", theQuote);
 
         return "search";

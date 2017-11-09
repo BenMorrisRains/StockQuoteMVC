@@ -33,7 +33,11 @@
 
     <form:form action="doSearch" method="post" modelAttribute="stockQuote">
 
-        Symbol: <input id="symbol" type="search" name="searchText"/><br/>
+        Symbol: <input id="symbol" type="text" name="searchText"/>
+        <br>
+        From Date: <input id="fromDate" type="text" name="fromDate"/>
+        <br>
+        Until Date: <input id="untilDate" type="text" name="untilDate" />
 
         <br><br>
 
