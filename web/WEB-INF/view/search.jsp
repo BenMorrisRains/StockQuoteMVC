@@ -56,6 +56,8 @@
         <br><br>
 
         <input type="submit" name="action" value="search"/>
+        <br>
+        <input type="reset"/>
 
     </form:form>
 
