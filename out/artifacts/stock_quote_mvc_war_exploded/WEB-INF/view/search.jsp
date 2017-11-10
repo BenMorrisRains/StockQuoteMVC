@@ -29,8 +29,9 @@
     <h2>Search for Stock</h2>
 
     <p>Currently, you are limited to Google("GOOG"), Amazon("AMZN"), or PayPal("PYPL"). All dates must be entered
-    in the following sytle "yyyy-MM-dd". Try entering GOOG for the symbol, 2004-01-01 for the From Date, and 2004-08-01
-    for the Until Date. </p>
+        in the following sytle "yyyy-MM-dd". Try entering <strong>GOOG</strong> for the symbol,
+        <strong>2004-01-01</strong> for the From Date, and
+        <strong>2004-08-01</strong> for the Until Date. </p>
 
     <form:form action="doSearch" method="post" modelAttribute="stockQuote">
         <table>
@@ -44,13 +45,13 @@
                 <td>From Date:</td>
             </tr>
             <tr>
-            <td><input id="fromDate" type="text" name="fromDate"/></td>
+                <td><input id="fromDate" type="text" name="fromDate"/></td>
             </tr>
             <tr>
                 <td>Until Date</td>
             </tr>
             <tr>
-            <td><input id="untilDate" type="text" name="untilDate"/></td>
+                <td><input id="untilDate" type="text" name="untilDate"/></td>
             </tr>
         </table>
         <br><br>

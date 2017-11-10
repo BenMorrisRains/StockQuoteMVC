@@ -46,17 +46,14 @@ public class StockQuoteDAOimpl implements StockQuoteDAO {
 
 
     @Override
-
     public List<StockQuote> searchQuotes(String symbol, String fromDate, String untilDate) throws ParseException {
 
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-
         Date startDate = sdf.parse(fromDate);
         Date endDate = sdf.parse(untilDate);
 
-        String hql = "from StockQuote s where s.symbol = :stockSymbol AND date between :fromDate and :untilDate";
+        String hql = "from StockQuote s where s.symbol = :stockSymbol AND date between :fromDate and :untilDate order by date";
 
         Session currentSession = sessionFactory.getCurrentSession();
         sessionFactory.openSession();
@@ -70,7 +67,9 @@ public class StockQuoteDAOimpl implements StockQuoteDAO {
         System.out.println(stockQuotes);
 
 
+
         return stockQuotes;
+
     }
 
 

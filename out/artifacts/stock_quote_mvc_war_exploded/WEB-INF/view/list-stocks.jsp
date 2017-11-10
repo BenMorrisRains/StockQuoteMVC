@@ -35,7 +35,7 @@
 
     </table>
 
-
+    <p><a href="/stockQuote/index">Back to search</a> </p>
 
 
     </div>
